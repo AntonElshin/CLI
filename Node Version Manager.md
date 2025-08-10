@@ -10,3 +10,5 @@ nvm ls available
 # Переключиться на версию NodeJs
 nvm use <node_version>
 
+# Установка определённой версии NodeJs
+nvm install <node_version>

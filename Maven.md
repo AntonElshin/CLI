@@ -15,3 +15,10 @@ mvn clean install
 
 # Построить дерево зависимостей проекта
 mvn dependency:tree -Dverbose
+
+# Параметры для отключения ssl для работы через https для разных версий Maven
+Maven less 3.6.3
+-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true
+
+Maven 3.9.9
+-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.resolver.transport=wagon
