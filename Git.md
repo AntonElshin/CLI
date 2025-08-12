@@ -5,7 +5,10 @@ git --version
 git clone https://<git_server>:<user_name>/<repository_name>.git
 
 # Склонировать репозиторий через протокол ssh
-git clone git@github.com:<user_name>/<repository_name>.git
+git clone git@<git_server>:<user_name>/<repository_name>.git
+
+# Добавить все файлы в индекс гита
+git status
 
 # Добавить все файлы в индекс гита
 git add .
@@ -17,9 +20,16 @@ git restore --staged
 # Удалить конкретный файл из индекса гита
 git restore --staged <file_name>
 
-# Сделать коммит в локальную ветку и отправить изменения в удалённую ветку
-git commit -m "Add new feature"
+# Сделать коммит в локальную ветку
+git commit -m "commit message"
+# Отправить изменения в удалённую ветку
 git push origin <branch_name>
+
+# Получить изменения с удалённой ветки
+git pull origin <branch_name>
+
+# Флаг -n помогает решить ошибку при слиянии веток в проекте front-operator
+git commit -m "commit message" -n
 
 # Создать удалённую ветку и переключить её на новую удалённую ветку
 git checkout <branch_name>
