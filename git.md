@@ -58,3 +58,24 @@ git merge --squash <branch_name>
 # Список читается снизу вверх, таким образом последний коммит, это самый нижний коммит в списке.
 # Сохранить файлы в открывшихся текстовых редакторах
 git rebase --root -i
+
+# Добавление deploy-key для хостинга
+ssh-keygen
+cat /var/www/u0819914/data/.ssh/id_rsa.pub
+
+
+
+В проект flowerfantasy-infra добавляем другие git-репозитории как подмодули
+
+git submodule add https://github.com/AntonElshin/flowerfantasy.git laravel-app
+git submodule add https://github.com/AntonElshin/flowerfantasy-ui-nextjs.git next-app
+
+Потом можно переходить в каждую из папок и переключать её на отдельные ветки
+
+cd laravel-app
+git pull origin rc/1.0.0
+
+Потом можно переходить в каждую из папок и переключать её на отдельные ветки
+
+cd next-app
+git pull origin main
